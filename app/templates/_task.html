@@ -1,0 +1,21 @@
+<a class="task_url" href="{{ url_for('task', task_id=task.id) }}">
+<table class="table table-borderless task_table">
+  <tbody>
+    <tr >
+    <td rowspan=3 style="text-align:center;"><img class="profile-pic" src="https://via.placeholder.com/100 "></td>
+    </tr>
+    <tr>
+    <td>Name:</td>
+    <td>{{ task.name}}</td>
+    </tr>
+    <tr>
+    <td>Date Created:</td>
+    <td>{{ task.date_created | local_time }}</td>
+    </tr>
+    <!--<tr>
+        <td>Description:</td>
+        <td style="width:75%;">{{ task.description }}
+    </tr>-->
+  </tbody>
+</table>
+</a>

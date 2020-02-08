@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Register</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span class="invalid-feedback">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.name_first.label }}<br>
+            {{ form.name_first(size=32) }}<br>
+            {% for error in form.name_first.errors %}
+            <span class="invalid-feedback">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.name_last.label }}<br>
+            {{ form.name_last(size=32) }}<br>
+            {% for error in form.name_last.errors %}
+            <span class="invalid-feedback">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=64) }}<br>
+            {% for error in form.email.errors %}
+            <span class="invalid-feedback">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span class="invalid-feedback">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span class="invalid-feedback">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

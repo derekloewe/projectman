@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <h1 class="header">{{ task.name }}</h1>
+</div>
+
+<div class="row">
+    <div class="table-responsive-md">
+        <table class="table table-borderless ">
+            <tr>
+                <td><p>Status</p></td>
+                <td>{% if task.status %}<p>{{ task.status }}</p>{% endif %}</td>
+            </tr>
+            <tr>
+                <td><p>Created on</p></td>
+                <td>{% if task.date_created %}<p>{{ task.date_created | local_time }}</p>{% endif %}</td>
+            </tr>
+             <tr>
+                <td><p>Description</p></td>
+                <td>{% if task.description %}<p>{{ task.description }}</p>{% endif %}</td>
+            </tr>
+        </table>
+    </div>
+    </div>
+</div>
+
+    <hr>
+    <div class="row">
+        <h1 class="header">Comments</h1>
+    </div>
+{% endblock %}
